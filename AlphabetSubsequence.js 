@@ -1,0 +1,15 @@
+function AlphabetSubsequence(str){
+    let arr=str.split('')
+    let s = new Set(arr)
+    if (arr.length !==s.size) return false;
+    res=[]
+    arr.forEach(val => {
+        res.push(val.charCodeAt())
+    });
+    for (let i=0; i<res.length; i++){
+        if (res[i-1] > res[i]) return false;
+    }
+    return true;
+}
+
+console.log(AlphabetSubsequence('ace'))
